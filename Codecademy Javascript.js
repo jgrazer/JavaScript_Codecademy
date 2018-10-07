@@ -398,4 +398,75 @@ function callMyNightSky(){
 
 console.log(callMyNightSky());
 
-// Testing Git upload. Please.
+// Practice Good Scoping
+const logSkyColor = () => {
+  const dusk = true;
+  let color = 'blue'; 
+  if (dusk) {
+    let color = 'pink';
+    console.log(color); // pink
+  }
+  console.log(color); // blue 
+};
+
+console.log(color); // ReferenceError
+
+const logVisibleLightWaves = () => {
+  let lightWaves = 'Moonlight';
+	let region = 'The Arctic';
+  // Add if statement here:
+  if (region === 'The Arctic'){
+    let lightWaves = 'Northern Lights';
+    console.log(lightWaves);
+  }
+  console.log(lightWaves);
+};
+
+logVisibleLightWaves();
+
+// Arrays
+// Arrays can hold all the same dataypes or different datatypes
+// You can access individual characters in a string using bracket notation and the index
+const hello = 'Hello World';
+console.log(hello[6]);// Output: W
+
+const famousSayings = ['Fortune favors the brave.', 'A joke is a very serious thing.', 'Where there is love there is life.'];
+let listItem = famousSayings[0];
+console.log(listItem);
+console.log(famousSayings[2]);// access the third item
+console.log(famousSayings[3]);// undefined
+
+// let vs. const arrays
+let condiments = ['Ketchup', 'Mustard', 'Soy Sauce', 'Sriracha'];
+condiments[0] = 'Mayo';
+console.log(condiments);
+condiments = ['Mayo'];
+// const can only have existing values reassigned (I think)
+const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+utensils[3] = 'Spoon';
+console.log(utensils);
+
+// Adding elements to an array - push
+const itemTracker = ['item 0', 'item 1', 'item 2'];
+itemTracker.push('item 3', 'item 4');
+console.log(itemTracker); // Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+
+// Removing the last element from an array - pop
+const newItemTracker = ['item 0', 'item 1', 'item 2'];
+const removed = newItemTracker.pop();
+console.log(newItemTracker);// Output: [ 'item 0', 'item 1' ]
+console.log(removed);// Output: item 2
+
+const groceryList = ['orange juice', 'bananas', 'coffee beans', 'brown rice', 'pasta', 'coconut oil', 'plantains'];
+groceryList.shift();
+//console.log(groceryList);
+
+groceryList.unshift('popcorn');
+//console.log(groceryList);
+
+//console.log(groceryList.slice(1,4));
+
+//console.log(groceryList);
+
+const pastaIndex = groceryList.indexOf('pasta');
+console.log(pastaIndex);
